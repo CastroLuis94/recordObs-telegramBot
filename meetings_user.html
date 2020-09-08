@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="card.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</style>
+</head>
+<body>
+
+<div id = "page" class="card">
+    <img align = left src = {{BASE_PATH + "/Zoom_logo.jpg" }} alt="logo" width="600px" height="250px"/>
+  <h1 align = center>Meetings de Zoom</h1>
+  <table class="table is-bordered is-striped is-narrow is-fullwidth">
+      <tbody>
+        <thead>
+            <tr>
+                <td width ="25%" id = "encabezado" rowspan=1>Meetings</td>
+                <td width ="25%" id = "encabezado">sala</td>
+                <td width ="25%" id = "encabezado">password</td>
+            </tr>
+        </thead>
+        
+        {% for index in data_user.index %}
+        <tr>
+            <td>{{index}}  </td>
+            <td>{{ data_user.loc[index]['sala'] }}</td>
+            <td>{{ data_user.loc[index]['password'] }}</td>
+        </tr>
+        {% endfor %}
+        
+      
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
